@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="entrarSistema.css">
+</head>
+<body>
+  
+        <!-- Conteúdo da página de login -->
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                localStorage.removeItem('loggedOut');
+            });
+        </script>
+   
+    
+    <h1 id="header">GERENCIAMENTO DE ESTOQUE</h1>
+    <div id="exo" class="spin-text">AGRO EXOTIC</div>
+    <h2 id="benvindo">SEJA BEM-VINDO!</h2>
+    <main>
+        <div id="container">
+            <div>
+                <label for="user">Usuário:</label>
+                <input type="text" id="user" class="input-field" />
+            </div>
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" />
+                <div>
+                    <p id="aviso">Digite com letra Minuscula!</p>
+                </div>
+            </div>
+            <button id="entrar-btn"><strong style="color:black;">Entrar</button></strong>
+        </div>
+        <img src="gifEntrar.gif" alt="" id="gifEntrar" class="loading">
+    </main>
+    <script src="entrarSistema.js"></script>
+
+
+
+
+
+
+  
+     
+    
+   
+</body>
+</html>

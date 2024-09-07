@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendaBipada.css">
+    <title>Vendas Automáticas</title>
+</head>
+<body>
+    <input type="text" id="codigo_Produto" placeholder="Bipe o código do produto" autofocus>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="produtoInfo"></p>
+        </div>
+    </div>
+  
+    <span class="close"><img src="lixeira (2).png" alt="lixo" class="lixeira" id="lixeira"></span>
+    <input type="text" id="total" readonly value="Total: R$ 0,00">
+    <div class="image-container">
+         <img src="cachorro nina.jpeg" alt="" id="nina">
+  <img src="jack filhote.jpeg" alt="" id="jack">
+  <img src="animais da chacara.jpeg" alt="" id="animais">
+  <img src="cachorro piloto.jpeg" alt="" id="piloto">
+  
+  </div>
+ 
+  <button id="logoutButton" class="btn"><img src="sair.png" alt="" id="btn2"></button>
+ 
+   <script src="vendaBipada.js"></script>
+</body>
+</html>

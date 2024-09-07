@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Produtos Vendidos</title>
+    <link rel="stylesheet" href="relatVendas.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+</head>
+<body>
+    <h1>Histórico de Produtos Vendidos</h1>
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Código do Produto</th>
+                <th>Data da Venda</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+            <!-- Os produtos serão inseridos aqui -->
+        </tbody>
+    </table>
+    <div id="totals">
+        <p id="totalQuantity">Quantidade Total: 0</p>
+        <p id="totalValue">Valor Total: R$ 0.00</p>
+    </div>
+    <script src="relVendas.js"></script>
+</body>
+</html>

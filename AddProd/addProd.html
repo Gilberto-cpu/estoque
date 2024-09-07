@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="AddProd.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+   
+</head>
+<body>
+    <form id="productForm">
+        <div class="container">
+            <h1>Adicionar Produtos</h1>
+            <div class="product-form">
+                <input type="text" id="ProductName" placeholder="Nome do Produtos" autofocus() required>
+                <input type="number" id="quantity" placeholder="Quantidade" required>
+                <input type="number" id="price" placeholder="Preço" required>
+               <input type="text" id="data_Validade" placeholder="Data de Validade" required>
+                 <input type="number" id="codigo_Produto" placeholder="Código do Produto" required>
+                
+                <input type="datetime" id="data_Entrada" placeholder="Data da Entrada" required>
+                
+                <button type="submit" id="submitButton">Adicionar Produtos</button>
+               
+               
+              <a href="http://127.0.0.1:5500/PaginaPrincipal/principal.html" target="_blank">  <img src="Foto recortada.png" alt="gif" id="gif"></a>
+            </div>
+        </div>
+    </form>
+ 
+    <img src="gatocao.png" alt="" id="gatocao">
+    <div id="error-message" class="error-message"></div>
+
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+    
+    <script src="AddProd.js" defer></script>
+    <script src="dataHora.js" defer></script>
+    
+</body>
+</html>

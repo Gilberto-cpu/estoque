@@ -1,0 +1,156 @@
+Documentação do Gerenciamento de Estoque
+Introdução
+Esta documentação descreve o sistema de gerenciamento de estoque utilizado em nossa aplicação web, desenvolvida em JavaScript com banco de dados SQLite3. O sistema permite adicionar, atualizar, obter e deletar produtos, além de verificar a quantidade de produtos, exibir avisos de estoque mínimo e gerar relatórios de estoque.
+
+Funcionalidades Principais
+1. Adicionar Produto
+Rota: POST /produtos
+
+Descrição: Adiciona um novo produto ao estoque. Se o produto já existir, soma a quantidade nova com a quantidade existente.
+
+Parâmetros:
+
+nome (string): Nome do produto.
+quantidade (int): Quantidade do produto a ser adicionada.
+Resposta:
+
+201 Created: Produto adicionado com sucesso.
+400 Bad Request: Parâmetros inválidos.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.post('/produtos', (req, res) => {
+    const { nome, quantidade } = req.body;
+    // Código para adicionar ou atualizar o produto
+});
+2. Atualizar Produto
+Rota: PUT /produtos/:id
+
+Descrição: Atualiza os detalhes de um produto específico.
+
+Parâmetros:
+
+id (int): ID do produto a ser atualizado.
+nome (string, opcional): Novo nome do produto.
+quantidade (int, opcional): Nova quantidade do produto.
+Resposta:
+
+200 OK: Produto atualizado com sucesso.
+404 Not Found: Produto não encontrado.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.put('/produtos/:id', (req, res) => {
+    const { id } = req.params;
+    const { nome, quantidade } = req.body;
+    // Código para atualizar o produto
+});
+3. Obter Todos os Produtos
+Rota: GET /produtos
+
+Descrição: Retorna uma lista de todos os produtos no estoque.
+
+Resposta:
+
+200 OK: Lista de produtos.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.get('/produtos', (req, res) => {
+    // Código para obter todos os produtos
+});
+4. Obter Produto Específico
+Rota: GET /produtos/:id
+
+Descrição: Retorna os detalhes de um produto específico.
+
+Parâmetros:
+
+id (int): ID do produto.
+Resposta:
+
+200 OK: Detalhes do produto.
+404 Not Found: Produto não encontrado.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.get('/produtos/:id', (req, res) => {
+    const { id } = req.params;
+    // Código para obter o produto específico
+});
+5. Deletar Produto
+Rota: DELETE /produtos/:id
+
+Descrição: Remove um produto do estoque.
+
+Parâmetros:
+
+id (int): ID do produto a ser removido.
+Resposta:
+
+200 OK: Produto deletado com sucesso.
+404 Not Found: Produto não encontrado.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.delete('/produtos/:id', (req, res) => {
+    const { id } = req.params;
+    // Código para deletar o produto
+});
+6. Verificar Estoque Mínimo
+Rota: GET /produtos/estoque-baixo
+
+Descrição: Verifica se a quantidade de algum produto está abaixo do mínimo definido e exibe um aviso.
+
+Resposta:
+
+200 OK: Lista de produtos com estoque baixo.
+Exemplo de Código:
+
+javascript
+Copiar código
+app.get('/produtos/estoque-baixo', (req, res) => {
+    // Código para verificar o estoque mínimo
+});
+7. Relatório de Estoque
+Acesso: Restringido a usuários com login e senha.
+
+Descrição: Gera um relatório detalhado dos produtos em estoque, incluindo quantidades e datas de atualização.
+
+Rota de Login: POST /login
+
+Parâmetros de Login:
+
+username (string): Nome de usuário.
+password (string): Senha do usuário.
+Resposta de Login:
+
+200 OK: Login bem-sucedido.
+401 Unauthorized: Credenciais inválidas.
+Rota de Relatório: GET /relatorio
+
+Descrição da Rota: Disponível somente após autenticação bem-sucedida, retorna os dados do relatório.
+
+Exemplo de Código para Login:
+
+javascript
+Copiar código
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    // Código para autenticação do usuário
+});
+Exemplo de Código para Relatório:
+
+javascript
+Copiar código
+app.get('/relatorio', (req, res) => {
+    // Código para geração do relatório
+});
+Conclusão
+Este sistema de gerenciamento de estoque permite um controle eficiente dos produtos, garantindo que o estoque seja mantido em níveis adequados, as operações de vendas não sejam interrompidas por falta de produtos, e que relatórios detalhados possam ser gerados por usuários autenticados.
+

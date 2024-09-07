@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendas.css">
+    <title>Gerenciador de Estoque</title>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Vendas</h1>
+        <div class="product-form">
+            <input type="text" id="productName" placeholder="Nome do Produtos">
+            <input type="number" id="quantity" placeholder="Quantidade">
+            <input type="number"  id="price"  placeholder="Preço">
+           
+            <input type="text"  id="codigo_Produto" placeholder="Código do Produto">
+             <input type="datetime"  id="data_Entrada" placeholder="Data da Venda" required>
+            <button id="addProduct" type="button"> Produtos Vendidos</button>
+            <button  id="deleteProduct" type="submit">Deletar Produtos Vencidos</button> 
+           <a href="http://127.0.0.1:5500/PaginaPrincipal/principal.html" target="_blank"> <img src="Foto recortada.png" alt="gif" id="gif"></a>
+        </div>
+       
+        <input type="number" id="total" hidden>
+
+    <ul id="product-list" hidden></ul>
+       
+    </div>
+     <span id="prodVen">Produto Vendido!</span>
+     <span id="prodDel">Produto Deletado</span>
+    <img src="gatocao.png" alt="" id="gatocao"> 
+ 
+   
+    <script  src="vendas.js"   defer></script>
+    <script src="hora.js" defer></script>
+   
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+     <title> Vendas do Dia</title>
+    <link rel="stylesheet" href="vendasDoDia.css">
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+</head>
+<body>
+    <h1>Produtos Vendidos por Dia</h1>
+   
+    <ul id="product-list"></ul>
+    <div id="message" style="display: none; margin-left: 420px;"><img src="bolsa (2).png" alt=""></div>
+    <div id="confirmationModal" class="modal">
+        <div class="modalcontent">
+            <span class="close-btn">&times;</span>
+            <p>Deseja deletar?</p>
+            <button id="confirmBtn">Sim</button>
+            <button id="cancelBtn">Não</button>
+        </div>
+    </div>
+
+<!-- Modal de Aviso -->
+<div id="minQuantityModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Aviso de Quantidade Mínima</h2>
+        <p id="minQuantityMessage"></p>
+        <button id="okButton">OK</button>
+    </div>
+</div>
+
+    <script src="vendasDoDia.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:#f2f8f2;
+    overflow: auto; /* Adicionado overflow na página principal */
+}
+
+#gif{
+    position: fixed;
+    bottom: 7px; /* Ajuste a posição conforme necessário */
+    right: 20px; /* Ajuste a posição conforme necessário */
+    width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Ajuste o tamanho conforme necessário */
+    z-index: 1000;
+  }
+  
+  #gif{
+     
+      animation: spin 10s linear infinite;
+  }
+  
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    overflow: auto; /* Adicionado overflow na contêiner */
+}
+.report {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    word-wrap: break-word; /* Ensure long words break to fit the container */
+    white-space: pre-wrap; /* Preserve whitespace and ensure text wraps */
+    overflow-wrap: break-word; /* Break long words to fit the container */
+}
+
+.input-field{
+    background-color: #e9e9e9;
+    border-color:green;
+    border-radius: 6px;
+    font-size: 20px;
+    
+}
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form label {
+    margin-bottom: 5px;
+}
+form button {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color:green;
+    color: black;
+    cursor: pointer;
+    
+}
+button:hover{
+    background-color: rgb(109, 236, 109);
+}
+textarea {
+    height: 200px;
+    resize: none;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+h1,h2{
+    text-align: center;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <div class="container">
+        <img src="Foto recortada.png" class="logo" id="logo1">
+        <img src="pata2.png" alt="pata2" id="pata2">
+        <img src="patinhas.png" alt="patinhas" id="pata">
+      
+        <img src="AGRO (1).svg" alt=""  id="pata3" class="rotated-image">
+        <header>  
+            <img src="gato (2).png" alt="gato" id="gato">
+            <div id="main">
+                <button class="openbtn" onclick="openSidebar()">☰</button>
+            </div>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="../VendaAutomatica/vendaBipada.html" target="_blank">Vendas Automáticas</a></li>
+                <li><a href="../AddProd/addProd.html" target="_blank">Adicionar Produtos</a></li>
+                <li><a href="../vendasDoDia/vendasDoDia.html" target="_blank">Vendas do Dia</a></li>
+                <li><a href="../Relatório%20de%20vendas/relatorioVendas.html" target="_blank">Histórico de Vendas</a></li>
+                <li><a href="../vendas.html" target="_blank">Vendas</a></li>
+                <li><a href="../estoque/estoque.html" target="_blank">Estoque</a></li>
+                <li><a href="../relatorio/relatorio.html" target="_blank">Relatório</a></li>
+                <li><a href="../verificarPreço/verificarPreço.html" target="_blank">Verificar Preços</a></li>
+                <img src="lu.png" alt="lu" id="lu">
+            </ul>
+        </aside>
+        
+        <main>
+            <img src="gatocao.png" alt="gatocao" id="gatocao">
+            <input type="text" id="search"  placeholder="Procurar Produtos" class="inp"  oninput="filtrarProdutos()">
+            <div id="productContainer"> 
+                <div id="span01"><span class="close" id="fechar"> &times;</span> </div>
+                <div id="productList" hidden></div>
+            </div>
+        </main>
+        <span id="prodNao1">Produto <strong id="prod"> Não </strong> encontrado!</span>
+    </div>
+    <script src="principal.js"></script>
+    <script src="buscarProd.js"></script>
+</body>
+</html>
