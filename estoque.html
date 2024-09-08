@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="estoque.css">
+   
+
+    
+</head>
+<body>
+               
+                <h1>Estoque</h1> <a href="http://127.0.0.1:5500/PaginaPrincipal/principal.html" target="_blank"><img src="Foto recortada.png" alt="gif" id="gif"></a> 
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>DataEntrada</th>
+                <th>CodigoProduto</th>
+                <th>DataValidade</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="product-list"></tbody>
+    </table>
+   
+
+<script src="estoque.js"></script>
+    
+</body>
+</html>

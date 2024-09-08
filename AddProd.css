@@ -1,0 +1,194 @@
+/* Remove spinners em Chrome, Safari, Edge, Opera */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    background-color:  #caecca;
+    margin: 10px;
+    padding: 0;
+    
+
+}
+
+#gif{
+    position: fixed;
+    bottom: 130px; /* Ajuste a posição conforme necessário */
+    right: 150px; /* Ajuste a posição conforme necessário */
+    width: 80px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Ajuste o tamanho conforme necessário */
+    z-index: 1000;
+  }
+  #gatocao{
+    display: flex;
+    width: 150px;
+    height: auto;
+    margin-top: -125px;
+  }
+  #gif{
+     
+      animation: spin 10s linear infinite;
+  }
+  
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+
+
+/* Estilo para o container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Estilo para o título principal */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para o formulário de produtos */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+
+.product-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-form button#submitButton{
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+/* Estilo para a lista de produtos */
+
+
+.product-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-list button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.product-list button:hover {
+    background-color: #c0392b;
+}
+#msn{
+    position: absolute;
+    display: none;
+    margin-left: 260px;
+   margin-top:-15px;
+   font-size: 20px;
+}
+form{
+    margin-bottom: auto;
+    
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+.toast {
+    visibility: hidden;
+    min-width: 350px;
+    margin-left: -125px;
+    background-color:green;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    box-shadow: 0px 0px 10px 0px #000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.toast.ok {
+    background-color: #4CAF50; /* Verde */
+}
+
+.error-message {
+    display: none; /* Ocultar por padrão */
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1000; /* Garantir que fique sobre outros elementos */
+    width: 500px; /* Ajuste a largura conforme necessário */
+    font-size: 20px;
+}
+
+
+.error-message.show {
+    display: block;
+}

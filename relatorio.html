@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <link rel="stylesheet" href="relatorio.css">
+    
+       
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Relatórios</h1>
+        <form id="reportForm">
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" class="input-field" required>
+            
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" class="input-field" required>
+            
+            <label for="time">Horário:</label>
+            <input type="time" id="time" name="time" class="input-field" required>
+            
+            <label for="report">Relatório:</label>
+            <textarea id="report" name="report" rows="6" class="input-field" required></textarea>
+            
+            <button type="button" onclick="addReport()">Adicionar Relatório</button>
+        </form>
+
+        <h2>Relatórios</h2>
+        <div id="reportsContainer"></div>
+    </div>
+   <a href="http://127.0.0.1:5500/PaginaPrincipal/principal.html" target="_blank"> <img src="Foto recortada.png" alt="gif" id="gif"></a>
+   <script src="relatorio.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(196, 247, 196);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+table {
+    width: 1300px;    
+border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    
+}
+
+th {
+    background-color:orange;
+    color: black;
+    font-weight: bold;
+    border: green solid 1px;
+    
+    
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ecf0f1;
+}
+
+#totals {
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+#totals p {
+    margin: 15px 0;
+    color: #2c3e50;
+}
+
+#totals p:first-child {
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Adicionando um efeito de transição suave para hover */
+tr {
+    transition: background-color 0.3s ease;
+}
+.delete-btn{
+    margin-left: -30px;
+    color: red;
+}

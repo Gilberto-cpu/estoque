@@ -1,0 +1,151 @@
+/* Remove spinners em Chrome, Safari, Edge, Opera */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+body{
+    background-color:  #caecca;
+}
+#gif{
+    position: fixed;
+    bottom: 110px; /* Ajuste a posição conforme necessário */
+    right: 150px; /* Ajuste a posição conforme necessário */
+    width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Ajuste o tamanho conforme necessário */
+    z-index: 1000;
+  }
+  
+  #gif{
+     
+      animation: spin 10s linear infinite;
+  }
+  #gatocao{
+    position: absolute;
+    display: flex;
+    width: 150px;
+    height: auto;
+    margin-top: -120px;
+  }
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+  input {
+    transition: opacity 0.7s ease-out;
+}
+
+.hidden {
+    opacity: 0;
+}
+#prodVen{
+    position: absolute;
+    display: none;
+    margin-left: 250px;
+    font-size: 22px;
+    
+    
+}
+#prodVen {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+#prodVen.visible {
+    opacity: 1;
+}
+#prodDel{
+    position: absolute;
+    display: none;
+    margin-left: 250px;
+    font-size: 22px;
+}
+
+/* Estilo para o container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título principal */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para o formulário de produtos */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-form button#addProduct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.product-form button#deleteProduct {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Estilo para a lista de produtos */
+.product-list {
+    margin-top: 20px;
+}
+
+.product-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-list button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+}
+
+.product-list button:hover {
+    background-color: #c0392b;
+}

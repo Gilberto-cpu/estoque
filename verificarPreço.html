@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'loggedOut' && event.newValue === 'true') {
+                alert('Você foi desconectado. Redirecionando para a página de login...');
+                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html';
+            }
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verificarPreço.css">
+    <title>Verificar Preço</title>
+</head>
+<body>
+    <input type="text" id="codigoInput" placeholder="Bipe o código do produto" autofocus>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="produtoInfo"></p>
+        </div>
+    </div>
+   
+    <span class="close"><img src="lixeira (2).png" alt="lixo" class="lixeira" id="lixeira"></span>
+    <input type="text" id="total" readonly value="Total: R$ 0,00">
+  <img src="bolsa (2).png" alt="" style="width: 400px; height: auto;" id="bolsa">
+    
+    
+   <script src="verificarPreço.js"></script>
+</body>
+</html>

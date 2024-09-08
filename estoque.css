@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th,td {
+    background-color: #f2f2f2;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-color: #f2f8f2;
+}
+
+#gif{
+    position: fixed;
+    top: 7px; /* Ajuste a posição conforme necessário */
+    right: 20px; /* Ajuste a posição conforme necessário */
+    width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Ajuste o tamanho conforme necessário */
+    z-index: 1000;
+  }
+  
+  #gif{
+     
+      animation: spin 10s linear infinite;
+  }
+  
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
