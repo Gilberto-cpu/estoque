@@ -1,0 +1,289 @@
+id,nome,quantidade,preco,dataEntrada,codigoProduto,dataValidade
+468,coleira de cachorro [cartela],39,3.5,2024-08-30,4545,01/01/2030
+469,capa de gaiola n 03,20,4.8,2024-08-24,4546,01/01/2030
+470,capa de gaiola n 4,20,5.9,2024-08-24,4547,01/01/2030
+471,capa de gaiola n 5,20,6,2024-08-24,4548,01/01/2030
+472,cleaning devici [escova],4,15,2024-08-24,4549,01/01/2030
+473,arranhador com rampa,2,65,2024-08-24,4550,01/01/2030
+474,arranhador com arco,4,35,2024-08-24,4551,01/01/2030
+475,bebedouro elevado lambe lambe,8,89,2024-08-24,4552,01/01/2030
+476,bebedouro pelos longos,20,12,2024-08-24,4553,01/01/2030
+477,bola petisco,8,14.99,2024-08-24,4554,01/01/2030
+478,brinquedo la bamba,6,26,2024-08-24,4555,01/01/2030
+479,cama nuvem rosa,2,95,2024-08-24,4556,01/01/2030
+480,comedouro duplo 1200ml,18,12,2024-08-24,4557,01/01/2030
+481,comedouro duplo 500ml,8,6.8,2024-08-24,4558,01/01/2030
+482,comedouro e bebedouro anti formiga,11,21,2024-08-24,4559,01/01/2030
+483,comedouro interativo,20,16,2024-08-24,4560,01/01/2030
+484,manta cobertor,6,16,2024-08-24,4561,01/01/2030
+485,pneu grande c/ corda,5,22,2024-08-24,4562,01/01/2030
+488,pneu big,2,22,2024-08-24,4563,01/01/2030
+489,bolsa de passeio p,2,58,2024-08-24,4564,01/01/2030
+490,bolsa de passeio m,2,76,2024-08-24,4565,01/01/2030
+491,bebedouro automatico,10,26,2024-08-24,4566,01/01/2030
+492,tobo fonte,2,79.99,2024-08-24,4567,01/01/2030
+493,fonte postura correta,4,69.99,2024-08-24,4568,01/01/2030
+494,comedouro postura correta gato,4,14.99,2024-08-24,4549,01/01/2030
+495,casinha hamister,6,12.99,2024-08-24,4550,01/01/2030
+496,fucinheira metal tam 2,1,16.99,2024-08-24,4551,01/01/2030
+497,fucinheira metal tam 4,1,17.99,2024-08-24,4552,01/01/2030
+498,fucinheira metal tam 5,1,17.99,2024-08-24,4553,01/01/2030
+499,fucinheira tecido tam 6 ao 7,3,13.99,2024-08-24,4554,01/01/2030
+518,ração golden AD frango minibts 15 KG,2,155.99,2024-08-31,1003,01/06/2025
+519,ração golden AD minibts carne 15KG,2,155.99,2024-08-31,1004,01/06/2025
+520,ração golden AD frango minibts 1KL,15,12.6,2024-08-31,1001,01/06/2025
+521,ração golden AD carne minibts 1KL,15,12.6,2024-08-31,1002,01/06/2025
+522,"ração golden Filhote frango minibts 10,1 KL",1,146.99,2024-08-31,1005,11/10/2025
+523,ração golden Filhote frango minibts 1KG,10,14.9,2024-08-31,1006,11/10/2025
+524,ração golden F senior minibts 1 KG,10,14.9,2024-08-31,1007,28/09/2025
+525,ração golden F senior minibts 10 KG,1,135,2024-08-31,1008,28/09/2025
+526,ração golden gato AD castr.frango 10KG,1,165,2024-08-31,1009,22/10/2025
+527,ração golden gato AD castr.frango 1KG,10,16.9,2024-08-31,1010,22/102025
+528,ração golden gato AD castr.salmão 10KG,1,170,2024-08-31,1012,24/10/2025
+529,ração golden gato AD castr.salmão 1KG,10,17.9,2024-08-31,1011,24/10/2025
+530,ração golden gato filhote frango 10KG,1,160,2024-08-31,1014,17/10/2025
+531,ração golden gato filhote frango 1KG,10,16.9,2024-08-31,1013,17/10/2025
+532,ração golden AD frango minibts [pacote] 1KG,1,21.9,2024-08-31,1015,04/09/2025
+533,ração golden filhote frango minibts [pacote] 1KG,1,23.5,2024-08-31,1016,18/09/2025
+534,ração golden formula cães filhote carne minibts [pacote] 1 KG,1,23.9,2024-08-31,1017,13/07/2025
+535,ração golden gato AD castr.frango [pacote] 1KG,1,22.9,2024-08-31,1018,07/082025
+536,ração golden gato AD castr. salmão [pacote] 1KG,1,30.9,2024-08-31,1019,07/082025
+537,ração golden gato filhote frango [pacote] 1KG,1,29.9,2024-08-31,1020,13/08/2025
+538,ração gonden ambiente interno AD 12kg,1,238,2024-08-31,1021,12/10/2025
+539,ração gonden ambiente interno AD 1kg,12,20.9,2024-08-31,1022,12/10/2025
+540,ração premier AD R/P minibts frango 20KG,1,355,2024-08-31,1023,16/10/2025
+541,ração premier AD R/P minibts frango 1KG,20,17.9,2024-08-31,1024,16/10/2025
+542,ração premier filhote R/P minibts frango 20KG,1,354,2024-08-31,1025,25/08/2025
+543,ração premier filhote R/P minibts frango 1KG,20,18.9,2024-08-31,1026,25/08/2025
+544,ração raça shih tzu [pacote] 1KG,1,41.9,2024-08-31,1027,04/10/2025
+545,premier cookie AD frutas vermelhas 250G,1,15.9,2024-08-31,1028,01/102025
+546,premier cookie filhote frutas vermelhas 250G,1,15.9,2024-08-31,1029,02/09/2025
+548,ração premier hipoalergenico prot hidrolisada mandioca Pporte 1KG,10,42.9,2024-08-31,1031,21/08/2025
+549,"ração premier NATTU cães AD Pporte mandioca 2,5",1,92,2024-08-31,1032,19/06/2025
+550,ração Billy cat peixe gato 25 KG,1,170,2024-08-31,1033,01/06/2025
+551,ração Billy cat peixe gato 1 KG,25,7.6,2024-08-31,1034,01/06/2025
+552,ração billy dog ossinho 15 Kg,3,72,2024-08-31,1035,01/06/2025
+553,ração billy dog ossinho 1 Kg,45,5.6,2024-08-31,1036,01/08/2025
+554,ação billy dog ossinho 25 Kg,1,116,2024-08-31,1037,01/08/2025
+555,ração billy dog filhote refeição diaria 25 KG,1,170,2024-08-31,1039,01/08/2025
+556,ração billy dog filhote refeição diaria 1 KG,25,7.5,2024-08-31,1040,01/08/2025
+557,ração billy dog frango 15 KG,3,72,2024-08-31,1041,01/08/2025
+558,ração billy dog frango 25 KG,1,170,2024-08-31,1043,01/08/2025
+559,ração billy dog frango 1 KG,25,5.5,2024-08-31,1044,01/08/2025
+560,ração billy dog R/P 15 KG,1,106,2024-08-31,1045,01/08/2025
+561,ração billy dog R/P 1 KG,15,7.5,2024-08-31,1046,01/08/2025
+562,ração billy dog refeição diaria 15 KG,1,86.9,2024-08-31,1047,01/08/2025
+563,ração billy dog refeição diaria 1KG,15,6.9,2024-08-31,1048,01/08/2025
+564,ração billy select carne 15kg,1,67,2024-08-31,1049,01/08/2025
+565,ração billy select carne 1kg,15,4.6,2024-08-31,1050,01/08/2025
+566,ração billy select carne 15kg,1,127,2024-08-31,1051,01/08/2025
+567,ração billy select carne 1kg,15,8.9,2024-08-31,1052,01/08/2025
+568,ração Spert cães premium filhote T/portes carne e arroz 10 KG,1,85.9,2024-08-31,1053,01/08/2025
+569,ração Spert cães premium filhote T/portes carne e arroz 1KG,10,9.9,2024-08-31,1054,01/08/2025
+570,ração Spert AD P/Porte carne arroz 20Kg,1,145,2024-08-31,1055,01/08/2025
+571,ração Spert AD P/Porte carne arroz 1Kg,20,7.9,2024-08-31,1056,01/08/2025
+572,ração Spert AD M/G porte 15 KG,1,160,2024-08-31,1057,01/08/2025
+573,ração Spert AD M/G porte 1KG,15,11.9,2024-08-31,1058,01/08/2025
+574,ração Spert cães AD todos portesfrango arroz 20KG,1,168,2024-08-31,1059,01/08/2025
+575,ração Spert cães AD todos portesfrango arroz 1KG,20,8.9,2024-08-31,1061,01/08/2025
+576,ração Spert premium AD P/porte carne arroz 10Kg,1,77.9,2024-08-31,1062,01/08/2025
+577,ração Spert premium AD P/porte carne arroz 1Kg,10,8.5,2024-08-31,1063,01/08/2025
+578,ração Magnus TD filhote carne 20Kg,1,205,2024-08-31,1064,01/08/2025
+579,ração Magnus TD filhote carne 1Kg,20,11.9,2024-08-31,1065,01/08/2025
+580,ração gatan Mix carne e frango 10Kg,1,89.9,2024-08-31,1066,01/08/2025
+581,ração gatan Mix carne e frango 1Kg,10,9.9,2024-08-31,1067,01/08/2025
+582,ração origens gato castr salmão 10KG,1,166,2024-08-31,1068,01/08/2025
+583,ração origens gato castr salmão 1KG,10,17.9,2024-08-31,1069,01/08/2025
+584,FN life AD P/mini peq 15Kg,1,259,2024-08-31,1070,01/08/2025
+585,FN life AD P/mini peq 1Kg,10,17.9,2024-08-31,1071,01/08/2025
+586,ração Magnum TD peq porte carne arroz 15KG,2,117,2024-08-31,1072,01/08/2025
+587,ração Magnum TD peq porte carne arroz 1Kg,15,8.5,2024-08-31,1073,01/08/2025
+588,ração magnum TD carne 15KG,3,117,2024-08-31,1074,01/08/2025
+589,ração magnum TD carne 1KG,45,8.5,2024-08-31,1075,01/08/2025
+590,ração origens cão min/peq carne cereais 15Kg,1,162,2024-08-31,1076,01/08/2025
+591,ração origens cão min/peq carne cereais 1Kg,15,15,2024-08-31,1077,01/08/2025
+592,magnum bifinho 60g,20,3.6,2024-08-31,1078,01/08/2025
+593,magnum biscoito original 400g,10,12.5,2024-08-31,1079,01/08/2025
+594,ração pedrigree carne vegetais 13Kg,1,165,2024-08-31,1080,01/08/2025
+595,ração pedrigree carne vegetais 1Kg,13,13.9,2024-08-31,1081,01/08/2025
+596,champ sache filhote frango 85g,20,2.5,2024-08-31,1082,01/08/2025
+597,kitekat AD carne 70g,24,2.1,2024-08-31,1083,01/08/2025
+598,opt cat sache AD castr fgo 85g,40,3.8,2024-08-31,1084,01/08/2025
+599,opt dog sache AD R/P M fgo 100g,36,3.8,2024-08-31,1085,01/08/2025
+600,pedrigree biscrok AD [multi] 1Kg,3,32.9,2024-08-31,1086,01/08/2025
+601,ração pedrigree dry r/peq 15 kg,2,180,2024-08-31,1087,01/08/2025
+602,ração pedrigree dry r/peq 15 kg,30,13.8,2024-08-31,1088,01/08/2025
+603,ração pedrigree filhote M/G port 15kg,1,180,2024-08-31,1089,01/08/2025
+604,ração pedrigree filhote M/G port 1kg,15,13.9,2024-08-31,1090,01/08/2025
+605,lata AD carne pate 290g,2,12.5,2024-08-31,1091,01/08/2025
+606,ped sache AD carne ao molho 100g,32,3.4,2024-08-31,1092,01/08/2025
+607,ped sache filhote carne ao molho 100g,18,3.6,2024-08-31,1093,01/08/2025
+608,ped sache R/P  cordeiro ao molho 100g,18,3.6,2024-08-31,1095,01/08/2025
+609,ped sache R/P frango ao molho 100g,18,2.4,2024-08-31,1096,01/08/2025
+610,ração wh dry A/D carne 10kg,1,175,2024-08-31,1097,01/08/2025
+611,ração wh dry A/D carne 1kg,10,18.9,2024-08-31,1098,01/08/2025
+612,ração wh dry gato/castr carne 10kg,1,185,2024-08-31,1099,01/08/2025
+613,ração wh dry gato/castr carne 1kg,10,18.9,2024-08-31,1100,01/08/2025
+614,wh lata pate carne 290g,2,12.8,2024-08-31,1101,01/08/2025
+615,wh sache A/D carne ao molho 85g,60,3.6,2024-08-31,1102,01/08/2025
+616,wh sache A/D frango ao molho 85g,40,3.6,2024-08-31,1103,01/08/2025
+617,wh sache A/D salmão ao molho 85g,40,3.8,2024-08-31,1104,01/08/2025
+618,wh sache castrado carne ao molho 85g,40,3.8,2024-08-31,1105,01/08/2025
+619,wh sache filhote carne ao molho 85g,40,3.6,2024-08-31,1106,01/08/2025
+620,wh temptantions  anti bola pelos 40g,6,11.9,2024-08-31,1107,01/08/2025
+621,mistura calopsita 500gr,20,4.5,2024-08-31,1108,01/08/2025
+622,mistura canário 500gr,20,7.9,2024-08-31,1109,01/08/2025
+623,mistura papagaio 500gr,12,6.9,2024-08-31,1110,01/08/2025
+624,mistura papagaio 1kg,2,12.8,2024-08-31,1111,01/08/2025
+625,alpiste 500gr,20,8.5,2024-08-31,1112,01/08/2025
+626,ração magic pet P/porte frango arroz 10kg,5,75,2024-08-31,1113,01/08/2025
+627,ração magic pet P/porte frango arroz 1kg,50,7.6,2024-08-31,1114,01/08/2025
+628,ração magic pet carne 15kg,5,83,2024-08-31,1115,01/08/2025
+629,ração magic pet carne 1kg,75,5.5,2024-08-31,1116,01/08/2025
+630,hana nuggets cat sensations 60gr,3,6.9,2024-08-31,1117,01/08/2025
+631,hana nuggets gato haibal control sensations 60gr,3,6.9,2024-08-31,1118,01/08/2025
+632,hana nuggets gato skin care 60gr,3,6.9,2024-08-31,1119,01/08/2025
+633,hana nuggets gato urinary control 60gr,3,7.9,2024-08-31,1120,01/08/2025
+634,hana stick calming 100gr,5,8.5,2024-08-31,1121,01/08/2025
+635,hana stick dental care 100 gr,10,8.5,2024-08-31,1122,01/08/2025
+636,hana tastefull nuggets gato carne 40gr,10,4.9,2024-08-31,1123,01/08/2025
+637,areia kets,5,7.9,2024-08-31,1124,01/08/2025
+638,kets areia de mandioca 1kg,1,19.9,2024-08-31,1125,01/08/2025
+639,areia kets gatissimo s/perfume 4kg,5,5.9,2024-08-31,1126,01/08/2025
+641,petiscão bifinho bacon 60gr,6,3.5,2024-08-31,1127,01/08/2025
+642,petiscão bifinho carne 60gr,6,3.5,2024-08-31,1128,01/08/2025
+643,petiscão bifinho carne 1k,1,42,2024-08-31,1129,01/08/2025
+644,petiscão bifinho carne 250gr,2,12.5,2024-08-31,1130,01/08/2025
+645,petiscão orelha bovina uni,3,7.2,2024-08-31,1131,01/08/2025
+646,petiscão ponta de vergalho bovino 60gr,12,4.9,2024-08-31,1132,01/08/2025
+647,ração monello R/P frango 15kg,1,135,2024-08-31,1133,01/08/2025
+648,ração monello R/P frango 1kg,15,9.7,2024-08-31,1134,01/08/2025
+649,shampoo procanini clareador 700ml,1,11.8,2024-08-31,3030,01/08/2025
+650,perfumes varias fragancia 50ml,28,15.9,2024-08-31,303,01/08/2025
+651,portão branco c/extensor 10c,2,110,2024-08-31,302,01/08/2030
+652,brinquedo cordinha procanine,10,9.5,2024-08-31,301,01/08/2030
+653,biscoito procanine R/P 200g,2,9.8,2024-08-31,1135,01/08/2025
+654,enropet 50mg cx 10 comp,1,32.9,2024-08-31,2020,30/10/2025
+655,enropet 50mg cada 1 comp,10,3.5,2024-08-31,2021,30/102025
+656,enropet 150mg cx 10 comp,1,80.9,2024-08-31,2022,30/07/2025
+657,enropet 150mg cada 1 comp,10,8.5,2024-08-31,2023,30/07/2025
+658,carprodyl 25mg cx 14 comp,1,73.9,2024-08-31,2024,30/07/2025
+659,carprodyl 25mg cada 1 comp,14,5.9,2024-08-31,2025,30/07/2025
+660,carprodyl 75mg cx 14 comp,1,117.5,2024-08-31,2026,30/09/2024
+662,carprodyl 75mg cada 1 comp,14,8.4,2024-08-31,2027,30/09/2024
+663,ketofen 5 mg10 comp,1,51,2024-08-31,2028,30/03/2026
+664,ketofen 5 mg cada 1 comp,10,5.5,2024-08-31,2029,30/03/2026
+665,"fiprolex 0-10 kg 0,67ml",2,54.65,2024-08-31,2030,30/06/2025
+666,"fiprolex 11-20kg 1,34ml",2,65.9,2024-08-31,2031,30/08/2025
+667,"fiprolex 21-40kg 2,68ml",2,73,2024-08-31,2032,30/08/2025
+668,"fiprolex 40-xxKG  4,02ml",2,90.6,2024-08-31,2033,30/08/2025
+669,"fiprolex gatos 0,5ml",2,55.6,2024-08-31,2034,30/07/2025
+670,canex composto  10kg  cx 4 comp,3,10,2024-08-31,2035,30/08/2025
+671,canex composto  10kg  cada 1 comp,12,2.8,2024-08-31,2036,30/08/2025
+672,canex pluss3 10kg cx 4 comp,3,38,2024-08-31,2037,30/08/2026
+673,canex pluss3 10kg cada 1 comp,12,9.5,2024-08-31,2038,30/08/2026
+674,canex premium 450mg cx 4 comp,3,57.9,2024-08-31,2039,30/06/2025
+675,canex premium 450mg cada 1 comp,12,14.5,2024-08-31,2040,30/06/2025
+676,canex original cx 4 comp,3,7.6,2024-08-31,2041,30/04/2026
+677,canex original cada 1 comp,12,2.6,2024-08-31,2042,30/04/2025
+678,petiz gatos 4 comp,3,39,2024-08-31,2043,30/08/2025
+679,petiz gatos cada 1 comp,12,9.75,2024-08-31,2044,30/08/2025
+680,petizi plus filhotes 20ml,3,45,2024-08-31,2045,30/04/2025
+681,marbopet 2705 mg 10kg  cx 10 comp,1,106,2024-08-31,2046,30/11/2025
+682,"marbopet 27,5 mg 10kg  cada 1 comp",10,10.9,2024-08-31,2047,30/11/2025
+683,"marbopet 82,5mg 30kg  cx 10 comp",1,167,2024-08-31,2048,30/11/2025
+684,"marbopet 82,5mg 30kg  cada 1 comp",10,16.8,2024-08-31,2049,30/11/2025
+685,osso defumado canelinha 20cm,6,7.5,2024-08-31,4570,01/08/2030
+686,osso defumado G umero bovino,3,24.9,2024-08-31,4571,01/08/2030
+687,ossinho 4/5,10,5,2024-08-31,4572,01/08/2030
+688,ossinho 6/7,8,9.5,2024-08-31,4573,01/08/2030
+689,ossinho palito 4/5  c/8,40,2.5,2024-08-31,4574,01/08/2030
+690,ossinho palito 6/5 pacote 500g,2,13.5,2024-08-31,4575,01/08/2030
+691,ossinho palito 8/5 pacote 500g,2,13.5,2024-08-31,4576,01/08/2030
+692,papa frutas 200g passaro,1,7.9,2024-08-31,4577,01/08/2025
+693,pate lata bongos carne 280g,2,7.8,2024-08-31,4578,01/08/2025
+694,pate lata bongos filhote carne 280g,1,7.8,2024-08-31,4579,01/08/2025
+695,pate lata bongos gato carne 280g,2,7.8,2024-08-31,4580,01/08/2025
+696,raticida kellmat granulado 25g,40,2,2024-08-31,4581,01/08/2025
+697,raticida kellmat sementes  25g,40,3.6,2024-08-31,4582,01/08/2025
+698,ratoeira adesiva kellmat,5,5.8,2024-08-31,4583,01/08/2025
+699,sabonete sarnicida 80g,3,12,2024-08-31,2050,01/08/2025
+700,serragem prensada 500g,2,4.8,2024-08-31,2051,01/08/2025
+701,shampoo cond matt 6x1 kelldrin 500ml,3,15.5,2024-08-31,2052,01/08/2025
+702,shampoo cond bomba vit 700ml pet clean,3,14.5,2024-08-31,2053,01/08/2025
+703,shampoo cond natural 700ml pet clean,3,14.5,2024-08-31,2054,01/08/2025
+704,shampoo cond neutro 700ml pet clean,3,14.5,2024-09-01,2055,01/08/2025
+705,tapete higienico durapads 60x60 unidade,30,2.9,2024-09-01,2056,01/08/2025
+706,tapete higienico durapads 60x60 c/7,2,15.9,2024-09-01,2057,01/08/2025
+707,vermex plus 20ml,2,20,2024-09-01,2058,01/08/2025
+708,areia de gato gatozim extra fin 4k,5,10.5,2024-09-01,1136,01/08/2025
+709,areia gato gatozim tradic 4k,5,7.8,2024-09-01,1137,01/08/2025
+710,areia gato max cat 4k,5,5.6,2024-09-01,1138,01/08/2025
+711,gaiola hamster 1 andar teto plastico,1,89.9,2024-09-01,1139,01/08/2030
+712,gaiola hamster bras/basica,1,39,2024-09-01,1140,01/08/2030
+713,gaiola hamster filezi color,1,44.9,2024-09-01,1141,01/08/2030
+714,gaiola hamster filz pequena,1,35,2024-09-01,1142,01/08/2030
+715,roupa n 5 time malha,2,15.99,2024-09-01,1143,01/08/2030
+716,roupa n 8 time malha,2,19.5,2024-09-01,1144,01/08/2030
+717,roupa n 9 time malha,2,21,2024-09-01,1145,01/08/2030
+718,roupa n 10 time malha,2,23,2024-09-01,1146,01/08/2030
+719,ração originale A/D carne 15kg,1,66,2024-09-01,1147,01/08/2025
+720,ração originale A/D carne 1kg,15,5,2024-09-01,1148,01/08/2025
+721,banho seco pet clen 500ml,1,16.5,2024-09-01,2059,01/08/2025
+722,bastão calopsita/agapornis 80g,4,12,2024-09-01,2060,01/08/2025
+723,bebedouro beija flor c/ chapeu 250ml,2,10.99,2024-09-01,2061,01/08/2025
+724,bebedouro beija flor mini 100ml,2,8.99,2024-09-01,2062,01/08/2025
+725,bebedouro hamster 120ml,2,16,2024-09-01,2063,01/08/2025
+726,bebedouro hamster drink 60ml,3,7.9,2024-09-01,2064,01/08/2030
+727,bifinho dog chef carne,3,2.69,2024-09-01,2065,01/08/2025
+728,bifinho dog chef churrasco 40g,3,2.69,2024-09-01,2066,01/08/2025
+729,bifinho dogs chef filhote carne 40g,3,2.69,2024-09-01,2067,01/08/2025
+730,bifinho dogs chef galinha 40g,3,2.69,2024-09-01,2068,01/08/2025
+731,bola cravo mini varias cores,12,2.69,2024-09-01,2069,01/08/2030
+732,frango vinil 16cm,4,6.99,2024-09-01,2070,01/08/2030
+733,frango vinil 28cm,3,12.99,2024-09-01,2071,01/08/2030
+734,frango vinil 36cm,4,17,2024-09-01,2072,01/08/2030
+735,vara gato c/guizo e mola,1,7.99,2024-09-01,2073,01/08/2030
+736,vara gato pena e guizo,2,7,2024-09-01,2074,01/08/2030
+737,macaco pelucia 40cm,2,26,2024-09-01,2075,01/08/2030
+738,casadinho spray 520ml bedog,2,14.5,2024-09-01,2076,01/08/2025
+739,coleira anti pulga free dog filhote 36cm,2,9.99,2024-09-01,2077,01/08/2025
+740,coleira anti pulga free cat  36cm,2,9.99,2024-09-01,2078,01/08/2025
+741,coleira anti pulga free dog adulto 45cm,2,10.99,2024-09-01,2079,01/08/2025
+742,coleira anti pulga /carrap p cães dugs,3,14.99,2024-09-01,2080,01/08/2025
+743,comedouro aluminio hamster 60ml,3,8,2024-09-01,2081,01/08/2030
+744,"comedouro aluminio 1,4",1,25,2024-09-01,2082,01/08/2030
+745,comedouro aluminio mini 300ml,3,12,2024-09-01,2083,01/08/2025
+746,comedouro aluminio 700ml,1,20,2024-09-01,2084,01/08/2030
+747,comedouro plastico hamster pp,3,2.5,2024-09-01,2085,01/08/2030
+748,creme condicionador 700ml pet clen,3,16,2024-09-01,2086,01/08/2025
+749,eliminador de odor 2 lt lavanda,2,9,2024-09-01,2087,01/08/2025
+750,fralda descartavel M c/5,1,14.5,2024-09-01,2088,01/08/2025
+751,fralda descartavel P c/5,1,13.5,2024-09-01,2089,01/08/2025
+752,"meia femea G 3,5x9 pet color",1,10.8,2024-09-01,2090,01/08/2030
+753,"meia femea M 3,7x5 pet color",1,9,2024-09-01,2091,01/08/2030
+754,"meia femea P 2,5x6 pet color",1,8.5,2024-09-01,2092,01/08/2030
+755,"meia macho G 3,5x9 pet color",1,10.8,2024-09-01,2093,01/08/2030
+756,"meia macho M 3,7x5 pet color",1,9,2024-09-01,2094,01/08/2030
+757,"meia macho P 2,5x6 pet color",1,8.5,2024-09-01,2095,01/08/2030
+758,molho p/ração carne gatos 250g,2,7.9,2024-09-01,2096,01/08/2025
+759,molho tasty dog churr carne  250g,2,7.9,2024-09-01,2097,01/08/2025
+760,nectar beija flor 25g,18,2.8,2024-09-01,2099,01/08/2025
+761,teste,31,99,2024-09-06,33,05/02/2025
+762,Desembarcador escova,1,16,2024-09-03,4569,01/08/2025
+763,Rasqueadeira,1,11,2024-09-03,4584,01/08/2025
+764,Escova p pelos,1,3.5,2024-09-03,4585,01/08/2025
+765,Cata caca preto,1,16,2024-09-03,4586,01/08/2025
+766,Cata caca colorido,1,9,2024-09-03,4587,01/08/2025
+767,Nó,1,18,2024-09-03,4588,01/08/2025
+768,Guia retrátil,1,32,2024-09-03,4589,01/08/2025
+769,teste22,1,21,2024-09-03,34,05/05/2025
+770,teste4,6,6,2024-09-03,30,02/01/2025
+771,caixa de transporte n:01,7,33.9,2024-09-05,3000,01/08/2030
+772,caixa de transporte n:03,7,49.9,2024-09-05,3001,01/08/2030
+773,caixa de transporte n:04,7,69.9,2024-09-05,3002,01/08/2030
+774,cama osso,1,49.9,2024-09-05,3003,01/08/2030
+775,sapato cama,1,79.9,2024-09-05,3004,01/08/2030
+776,cama colorida,3,49.9,2024-09-05,3005,01/08/2030
+777,cama toca p.,1,49.9,2024-09-05,3006,01/08/2030
+778,cama toca M,1,59.9,2024-09-05,3007,01/08/2030

@@ -1,34 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Função para recarregar a página
-   
     function reloadPage() {
-      window.location.reload();
-    }
-/*
-    // Função que será chamada quando a visibilidade da página mudar
-    function handleVisibilityChange() {
-        if (!document.hidden) {
-            reloadPage(); // Adiciona um pequeno delay para garantir que o check seja visível
-        }
+        window.location.reload();
     }
 
-   
-    // Verifica se a página precisa ser recarregada ao iniciar
-    if (document.hidden) {
-        reloadPage();
-    }
-*/
- // Adiciona o evento de mudança de visibilidade do documento
+    // Adiciona o evento de mudança de visibilidade do documento
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-let reloadTimeout;
+    let reloadTimeout;
 
-function handleVisibilityChange() {
-    if (!document.hidden) {
-        clearTimeout(reloadTimeout);
-        reloadTimeout = setTimeout(reloadPage, 500); // 500ms delay
+    function handleVisibilityChange() {
+        if (!document.hidden) {
+            clearTimeout(reloadTimeout);
+            reloadTimeout = setTimeout(reloadPage, 500); // 500ms delay
+        }
     }
-}
 
     // Inicialização das referências ao modal de quantidade mínima
     const minQuantityModal = document.getElementById('minQuantityModal');
@@ -72,7 +58,7 @@ function handleVisibilityChange() {
     // Função para verificar se a função de verificação foi executada hoje
     function checkMinQuantityOncePerDay() {
         const lastCheckDate = localStorage.getItem('lastCheckDate');
-        const today = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
+        const today = moment().format('DD/MM/YYYY'); // Formato DD/MM/YYYY
 
         if (lastCheckDate !== today) {
             // Atualiza a data da última verificação
@@ -101,7 +87,8 @@ function handleVisibilityChange() {
 
         return produtos.reduce((acc, produto) => {
             if (produto.dataEntrada) {
-                const dataEntrada = moment(produto.dataEntrada, 'DD/MM/YYYY', true).format('DD/MM/YYYY');
+                // Formata a data de entrada para o formato DD/MM/YYYY
+                const dataEntrada = moment(produto.dataEntrada, 'DD/MM/YYYY').format('DD/MM/YYYY');
                 if (!acc[dataEntrada]) {
                     acc[dataEntrada] = [];
                 }
@@ -160,7 +147,7 @@ function handleVisibilityChange() {
 
     // Função para salvar o produto deletado no banco de dados e removê-lo da tabela de produtos
     async function saveDeletedProductToDB(produto) {
-        produto.dataVenda = moment().format('DD-MM-YYYY'); // Adiciona a data da venda
+        produto.dataVenda = moment().format('DD/MM/YYYY'); // Adiciona a data da venda
 
         try {
             // Salva o produto na tabela de produtos vendidos
@@ -184,7 +171,7 @@ function handleVisibilityChange() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ quantidade: 1 }) 
+                body: JSON.stringify({ quantidade: 1 }) // Enviar a quantidade correta
             });
 
             if (!deleteResponse.ok) {
@@ -210,7 +197,7 @@ function handleVisibilityChange() {
             return;
         }
 
-        checkMinQuantityBeforeDelete(produto)
+        checkMinQuantityBeforeDelete(produto);
 
         // Remova um item do localStorage
         produtos.splice(index, 1);
@@ -262,6 +249,6 @@ function handleVisibilityChange() {
     };
 
     // Inicializa a página
-    checkMinQuantityOncePerDay(); // Verifica a quantidade mínima apenas uma vez por dia
+    checkMinQuantityOncePerDay(); // Verifica a quantidade mínima de produtos
     displayProductsByDay(); // Exibe produtos agrupados por dia
 });

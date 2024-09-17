@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const dataEntradaInput = document.getElementById('data_Entrada');
     const dataValidadeInput = document.getElementById('data_Validade');
     const codigoProdutoInput = document.getElementById('codigo_Produto');
-    const message = document.getElementById('error-message')
+    const message = document.getElementById('error-message');
+
     botao.addEventListener('click', async function(event) {
         event.preventDefault();
 
@@ -14,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const nome = nomeInput.value.trim();
         const precoInputValue = parseFloat(precoInput.value.replace(',', '.')) || null;
         const quantidade = parseInt(quantidadeInput.value) || null;
-        const dataEntradaValue = dataEntradaInput.value || null;
-        const dataValidadeValue = dataValidadeInput.value || null;
+        const dataEntradaValue = formatDate(dataEntradaInput.value) || null;
+        const dataValidadeValue = formatDate(dataValidadeInput.value) || null;
         const codigoProduto = parseInt(codigoProdutoInput.value);
 
         // Verificação de múltiplos envios
@@ -36,13 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // Verifica se o nome é diferente
                     if (nome && nome !== produtoExiste.nome) {
-                      setTimeout(()=>{
-                        message.display = 'inline'
-                        message.style.display = 'none'
-                        
-                      },5000)
-                       
-
+                        setTimeout(()=>{
+                            message.display = 'inline';
+                            message.style.display = 'none';
+                        },5000);
                     }
 
                     // Atualiza o produto existente
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            nome: nome || produtoExiste.nome, // Mantém o nome atual se não for fornecido
+                            nome: nome || produtoExiste.nome,
                             quantidade: quantidade,
                             preco: precoInputValue || produtoExiste.preco,
                             dataEntrada: dataEntradaValue || produtoExiste.dataEntrada,
@@ -64,15 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         showToast('Produto atualizado com sucesso!');
                         clearInputs();
                     } else {
-                       
                         const text = await updateResponse.text();
-                       
-                              message.style.display = 'inline'
-                     
-                     
-                       // showError(message)
-                        
-                       // throw new Error('Código de produto já existente com um nome diferente. Não é permitido atualizar o nome.');
+                        message.style.display = 'inline';
                     }
                 } else if (checkResponse.status === 404) {
                     // Insere um novo produto
@@ -104,13 +95,22 @@ document.addEventListener("DOMContentLoaded", function() {
             } catch (error) {
                 showToast('Erro: ' + error.message);
             } finally {
-                botao.disabled = false; // Reativa o botão
+                botao.disabled = false;
             }
         } else {
             alert("Preencha todos os campos obrigatórios corretamente.");
-            botao.disabled = false; // Reativa o botão
+            botao.disabled = false;
         }
     });
+
+    function formatDate(dateString) {
+        if (!dateString) return null;
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${day}/${month}/${year}`;
+    }
 
     function showToast(message) {
         var toast = document.getElementById("toast");
@@ -129,11 +129,10 @@ document.addEventListener("DOMContentLoaded", function() {
         quantidadeInput.value = '';
         precoInput.value = '';
     }
-    setTimeout(()=>{
+
+    setTimeout(() => {
         showError('Código de produto já existente com um nome diferente. Não é permitido atualizar o nome.');
-
-    },5000)
-
+    }, 5000);
 
     function showError(message) {
         const errorMessageDiv = document.getElementById('error-message');
@@ -141,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
         errorMessageDiv.className = 'error-message';
         setTimeout(function() {
             errorMessageDiv.className = 'error-message';
-            message.style.display = 'block'
+           // message.style.display = 'block';
         }, 5000); // Exibe a mensagem por 5 segundos
     }
 });

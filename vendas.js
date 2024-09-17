@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const productList = document.getElementById('product-list');
 
@@ -23,14 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
         calcularTotal();
     }
 
+    // Função para formatar data
+    function formatDate(dateString) {
+        const date = moment(dateString, 'YYYY-MM-DD');
+        return date.isValid() ? date.format('DD/MM/YYYY') : 'N/A';
+    }
+
     // Função para exibir produto na lista
     function ProdutoVendido(produto) {
         const listItem = document.createElement('li');
-        listItem.setAttribute('data-codigo', produto.codigoProduto);
-        const dataEntrada = moment(produto.dataEntrada, 'YYYY-MM-DD');
-        const dataEntradaFormatada = dataEntrada.isValid() ? dataEntrada.format('DD/MM/YYYY') : '';
+        const dataEntradaFormatada = formatDate(produto.dataEntrada);
 
-        listItem.textContent = `Produto: ${produto.nome}, Quantidade: ${produto.quantidade}, Preço: ${produto.preco.toFixed(2)}, Código: ${produto.codigoProduto}; Data de Entrada: ${dataEntradaFormatada}`;
+        listItem.textContent = `Produto: ${produto.nome}, Quantidade: ${produto.quantidade}, Preço: R$ ${parseFloat(produto.preco).toFixed(2).replace('.', ',')}, Código: ${produto.codigoProduto}; Data de Entrada: ${dataEntradaFormatada}`;
         document.getElementById('product-list').appendChild(listItem);
     }
 
@@ -47,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const dataEntrada = moment(dataEntradaValue, 'YYYY-MM-DD');
 
         if (dataEntrada.isValid()) {
-            if ( codigoProduto > 0) {
+            if (codigoProduto > 0) {
                 const produto = {
                     nome,
                     quantidade,
@@ -92,36 +95,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeProductFromLocalStorage(codigoProduto);
                 console.log('Produto deletado com sucesso.');
                 appearSpanDel.style.display = 'inline';
+                
             } catch (error) {
                 console.error('Erro ao deletar produto:', error);
             }
         } else {
             alert('Informe o código do produto para deletar.');
         }
+setTimeout(()=>{
+                   appearSpanDel.style.display = 'none';
+        // document.getElementById('quantity').value = '';
+eraserSoft()
+                   
+                },3000)
     });
 
-
+               
     // Função para calcular o total das vendas
     function calcularTotal() {
         const produtos = getProductsFromLocalStorage();
         let total = 0;
 
         produtos.forEach(produto => {
-            total += produto.preco;
-          
+            // Verifica se o preço é um número e soma ao total
+            const precoProduto = parseFloat(produto.preco);
+            if (!isNaN(precoProduto)) {
+                total += precoProduto;
+            }
         });
+
+        // Garante que o total seja um número antes de chamar toFixed
+        total = Number(total);
+
         localStorage.setItem('totalVendas', total.toFixed(2));
         displayTotal();
-          //appearBag()
     }
 
     // Função para exibir o total das vendas
     function displayTotal() {
         const total = localStorage.getItem('totalVendas');
         const inputTotal = document.getElementById('total');
-        inputTotal.value = total ? parseFloat(total).toFixed(2) : '0.00';
-      
-
+        inputTotal.value = total ? `Total: R$ ${parseFloat(total).toFixed(2).replace('.', ',')}` : 'Total: R$ 0,00';
     }
 
     const eraserSoft = function () {
@@ -153,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         span.style.display = 'inline';
         setTimeout(() => {
             span.classList.add('visible'); // Adiciona a classe para a transição de opacidade
-        }, 10); // Pequeno atraso para garantir que a transição ocorra
+        }, 1000); // Pequeno atraso para garantir que a transição ocorra
 
         // Esconde o span após 3 segundos
         setTimeout(() => {
@@ -164,17 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
             span.addEventListener('transitionend', function () {
                 span.style.display = 'none';
             }, { once: true });
-        }, 2000); // Exibe por 2 segundos
+        }, 3000); // Exibe por 2 segundos
     }
 
     calcularTotal();
-    
-   
-     
-            });
-        
-        
-        
-      
-    
-    
+});

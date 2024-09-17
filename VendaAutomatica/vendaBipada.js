@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Função para formatar datas
+    function formatDate(dateString) {
+        if (!dateString) return 'N/A';
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${day}/${month}/${year}`;
+    }
+
     // Evento para processar o código do produto ao mudar o input
     document.getElementById('codigo_Produto').addEventListener('change', function() {
         const codigoProduto = this.value;
@@ -12,16 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
+                // Formatar o preço do produto
+                const preco = parseFloat(produto.preco);
+                const precoFormatado = !isNaN(preco) ? preco.toFixed(2).replace('.', ',') : 'N/A';
+
                 // Exibir informações do produto no modal
                 const modal = document.getElementById('modal');
                 const produtoInfo = document.getElementById('produtoInfo');
                 produtoInfo.innerHTML = `
                     <strong>Código:</strong> ${produto.codigoProduto}<br>
                     <strong>Nome:</strong> ${produto.nome}<br>
-                    <strong>Valor:</strong> R$ ${produto.preco ? produto.preco.toFixed(2).replace('.', ',') : 'N/A'}<br>
-                    <strong>Data de Validade:</strong> ${produto.dataValidade || 'N/A'}<br>
+                    <strong>Valor:</strong> R$ ${precoFormatado}<br>
+                    <strong>Data de Validade:</strong> ${formatDate(produto.dataValidade)}<br>
                     <strong>Quantidade:</strong> ${produto.quantidade || 'N/A'}<br>
-                    <strong>Data Entrada:</strong> ${produto.dataEntrada || 'N/A'}<br>
+                    <strong>Data Entrada:</strong> ${formatDate(produto.dataEntrada)}<br>
                 `;
                 modal.style.display = 'block';
                 
@@ -31,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Somar valor ao total
                 const totalInput = document.getElementById('total');
-                const totalAtual = parseFloat(totalInput.value.replace('Total: R$ ', '').replace(',', '.')) || 0;
-                const novoTotal = totalAtual + (produto.preco || 0);
+                let totalAtual = parseFloat(totalInput.value.replace('Total: R$ ', '').replace(',', '.')) || 0;
+                const novoTotal = totalAtual + (isNaN(preco) ? 0 : preco);
                 totalInput.value = `Total: R$ ${novoTotal.toFixed(2).replace('.', ',')}`;
 
                 // Armazenar produto no localStorage
@@ -71,15 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Função para lidar com o logout
-  
-      const logoutButton = document.getElementById('logoutButton');
-    
-    if (logoutButton) {
-        logoutButton.addEventListener('click', () => {
-            localStorage.setItem('loggedOut', 'true');
-            setTimeout(() => {
-                window.location.href = 'http://127.0.0.1:5500/EntrarSistema/entrarSistema.html'; // Redireciona para a página de login
-            }, 2000); // Espera 2 segundos antes de redirecionar
-        });
-    }
+ 
 });

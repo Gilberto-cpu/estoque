@@ -1,4 +1,4 @@
-// Função para obter a data atual no formato YYYY-MM-DD
+// Função para obter a data atual no formato DD-MM-YYYY
 function getCurrentDate() {
     const today = new Date();
     const year = today.getFullYear();
@@ -13,7 +13,7 @@ function formatDate(dateString) {
 
     if (!dateString) return getCurrentDate(); // Usa a data atual se não houver data
 
-    // Verifica se a data está no formato dd/mm/yyyy
+    // Verifica se a data está no formato DD/MM/YYYY
     const parts = dateString.split('/');
     if (parts.length !== 3) return getCurrentDate(); // Usa a data atual se o formato estiver errado
 
@@ -67,12 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 produtos.forEach(produto => {
                     const row = document.createElement('tr');
+                    
+                    let preco = parseFloat(produto.preco);
+                    preco = !isNaN(preco) ? preco.toFixed(2).replace('.', ',') : 'Preço inválido';
+
                     row.innerHTML = `
                         <td>${produto.nome}</td>
-                        <td>R$ ${produto.preco.toFixed(2).replace('.', ',')}</td>
+                        <td>R$ ${preco}</td>
                         <td>1</td>
                         <td>${produto.codigoProduto}</td>
-                        <td>${formatDate(produto.dataVenda)}</td> <!-- Exibe a data formatada -->
+                        <td>${formatDate(produto.dataVenda)}</td>
                         <td><button class="delete-btn" data-id="${produto.codigoProduto}">🗑️</button></td>
                     `;
                     tableBody.appendChild(row);
@@ -81,19 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Atualiza os totais
             const totalQuantity = data.length; // Total de produtos
-            const totalValue = data.reduce((sum, produto) => sum + produto.preco, 0);
-
+            const totalValue = data.reduce((sum, produto) => {
+                let preco = parseFloat(produto.preco);
+                return sum + (isNaN(preco) ? 0 : preco);
+            }, 0);
+           
             document.getElementById('totalQuantity').textContent = `Quantidade Total: ${totalQuantity}`;
             document.getElementById('totalValue').textContent = `Valor Total: R$ ${totalValue.toFixed(2).replace('.', ',')}`;
 
             // Adiciona o listener de eventos para os botões de deletar
             document.querySelectorAll('.delete-btn').forEach(button => {
                 button.addEventListener('click', (event) => {
-                    const produtoId = event.target.getAttribute('data-id');
+                    // Captura o código do produto (codpro) do atributo data-codpro
+                    const codigoProduto = event.target.getAttribute('data-id');
+                    
+                    // Confirma se o usuário deseja deletar o produto
                     if (confirm('Você realmente deseja excluir este produto?')) {
-                        deleteProductFromDB(produtoId)
+                        // Chama a função para deletar o produto
+                        deleteProductFromDB11(codigoProduto)
                             .then(() => {
-                                // Remove a linha da tabela
+                                // Remove a linha correspondente da tabela
                                 event.target.parentElement.parentElement.remove();
                                 console.log('Produto removido com sucesso do banco de dados.');
                             })
@@ -106,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Função para deletar produto do banco de dados
-async function deleteProductFromDB(codigoProduto) {
+async function deleteProductFromDB11(codigoProduto) {
     try {
         const response = await fetch(`http://localhost:3000/vendidos/${codigoProduto}`, {
             method: 'DELETE',
@@ -115,18 +126,19 @@ async function deleteProductFromDB(codigoProduto) {
             }
         });
 
-        // Verifica se a resposta é bem-sucedida
+        // Verifica se a resposta não é ok (status não entre 200 e 299)
         if (!response.ok) {
-            const errorText = await response.text(); // Use text() ao invés de json()
+            const errorText = await response.text(); // Captura o texto da resposta de erro
             throw new Error(`Erro ao deletar produto do banco de dados: ${errorText}`);
         }
 
-        // Altere aqui para text() se o servidor não retornar um JSON
-        const result = await response.text(); // Use text() aqui também
+        // Como a resposta não é JSON, usa text()
+        const result = await response.text(); // Recebe a resposta como texto
         console.log('Produto removido com sucesso do banco de dados:', result);
+
+        return result; // Retorna o resultado caso queira utilizá-lo em outro lugar
     } catch (error) {
         console.error('Erro ao remover produto do banco de dados:', error);
-        throw error; // Rejeita a Promise para que o erro seja tratado no click event
+        throw error; // Rejeita a Promise para que o erro seja tratado onde a função for chamada
     }
 }
-

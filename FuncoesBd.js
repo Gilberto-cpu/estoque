@@ -1,57 +1,71 @@
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
+const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 
-// Caminho para o banco de dados
-const dbName = 'produtos.db';
-const dbPath = path.join(__dirname, dbName);
+// Configurações da conexão com o MySQL
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database:'produtos'
+});
 
 // Conexão com o banco de dados
-const db = new sqlite3.Database(dbPath, (err) => {
+connection.connect((err) => {
     if (err) {
-        console.error('Erro ao abrir o banco de dados:', err.message);
+        console.error('Erro ao conectar ao banco de dados:', err.message);
     } else {
         console.log('Conexão com o banco de dados estabelecida com sucesso.');
-        // Inicialização da tabela de produtos
-        db.run(`CREATE TABLE IF NOT EXISTS produtos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            quantidade INTEGER NOT NULL,
-            preco REAL NOT NULL,
-            dataEntrada TEXT NOT NULL,
-            codigoProduto INTEGER NOT NULL,
-            dataValidade TEXT NOT NULL
-        )`, (err) => {
-            if (err) {
-                console.error('Erro ao criar a tabela de produtos:', err.message);
-            } else {
-                console.log('Tabela de produtos criada com sucesso.');
-            }
-        });
-
-        // Inicialização da tabela de usuários
-        db.run(`CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT UNIQUE,
-            password TEXT
-        )`, (err) => {
-            if (err) {
-                console.error('Erro ao criar a tabela de usuários:', err.message);
-            } else {
-                console.log('Tabela de usuários criada com sucesso.');
-            }
-        });
+        // Inicialização das tabelas
+        createTables();
     }
 });
 
-// Promisify db operations
+function createTables() {
+    const createProdutosTable = `
+        CREATE TABLE IF NOT EXISTS produtos (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nome VARCHAR(255) NOT NULL,
+            quantidade INT NOT NULL,
+            preco DECIMAL(10, 2) NOT NULL,
+            dataEntrada DATE NOT NULL,
+            codigoProduto INT NOT NULL UNIQUE,
+            dataValidade DATE NOT NULL
+        )
+    `;
+
+    const createUsersTable = `
+        CREATE TABLE IF NOT EXISTS users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(255) UNIQUE,
+            password VARCHAR(255)
+        )
+    `;
+
+    connection.query(createProdutosTable, (err) => {
+        if (err) {
+            console.error('Erro ao criar a tabela de produtos:', err.message);
+        } else {
+            console.log('Tabela de produtos criada com sucesso.');
+        }
+    });
+
+    connection.query(createUsersTable, (err) => {
+        if (err) {
+            console.error('Erro ao criar a tabela de usuários:', err.message);
+        } else {
+            console.log('Tabela de usuários criada com sucesso.');
+        }
+    });
+}
+
+// Funções promisificadas para operações no banco de dados
 function runAsync(query, params = []) {
     return new Promise((resolve, reject) => {
-        db.run(query, params, function (err) {
+        connection.query(query, params, (err, results) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(this);
+                resolve(results);
             }
         });
     });
@@ -59,11 +73,11 @@ function runAsync(query, params = []) {
 
 function getAsync(query, params = []) {
     return new Promise((resolve, reject) => {
-        db.get(query, params, (err, row) => {
+        connection.query(query, params, (err, results) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(row);
+                resolve(results[0]);
             }
         });
     });
@@ -71,11 +85,11 @@ function getAsync(query, params = []) {
 
 function allAsync(query, params = []) {
     return new Promise((resolve, reject) => {
-        db.all(query, params, (err, rows) => {
+        connection.query(query, params, (err, results) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(rows);
+                resolve(results);
             }
         });
     });
@@ -93,51 +107,38 @@ async function adicionarOuAtualizarProduto(codigoProduto, nome, quantidade, data
     dataValidade = dataValidade !== '' ? dataValidade : null;
     preco = preco !== '' ? preco : null;
 
-    return new Promise((resolve, reject) => {
-        const selectQuery = 'SELECT * FROM produtos WHERE codigoProduto = ?';
+    try {
+        const existingProduct = await getAsync('SELECT * FROM produtos WHERE codigoProduto = ?', [codigoProduto]);
 
-        db.get(selectQuery, [codigoProduto], (err, row) => {
-            if (err) {
-                return reject(new Error('Erro ao verificar o produto no banco de dados.'));
+        if (existingProduct) {
+            // Verificar se o nome é o mesmo
+            if (nome !== null && nome !== existingProduct.nome) {
+                throw new Error('Código de produto já existente com um nome diferente. Não é permitido atualizar o nome.');
             }
-            if (row) {
-                // Produto existe, verifica se o nome é o mesmo
-                if (nome !== null && nome !== row.nome) {
-                    return reject(new Error('Código de produto já existente com um nome diferente. Não é permitido atualizar o nome.'));
-                }
-            }
-            if (row) {
-                // Atualizar os campos fornecidos e somar a quantidade
-                const updatedQuantidade = quantidade !== null ? quantidade + row.quantidade : row.quantidade;
-                const updateQuery = `
-                    UPDATE produtos 
-                    SET 
-                        nome = COALESCE(?, nome), 
-                        quantidade = ?, 
-                        dataEntrada = COALESCE(?, dataEntrada), 
-                        dataValidade = COALESCE(?, dataValidade), 
-                        preco = COALESCE(?, preco)
-                    WHERE codigoProduto = ?
-                `;
-                db.run(updateQuery, [nome, updatedQuantidade, dataEntrada, dataValidade, preco, codigoProduto], function (err) {
-                    if (err) {
-                        return reject(new Error('Erro ao atualizar o produto no banco de dados.'));
-                    }
-                    resolve('Produto atualizado com sucesso.');
-                });
-            } else {
-                // Produto não existe, inserir um novo registro
-                db.run(insertQuery, [codigoProduto, nome, quantidade, dataEntrada, dataValidade, preco], function (err) {
-                    if (err) {
-                        console.error('Erro SQL:', err.message);
-                        return reject(new Error('Erro ao adicionar o produto no banco de dados.'));
-                    }
-                    resolve('Produto adicionado com sucesso.');
-                });
-                
-            }
-        });
-    });
+
+            // Atualizar os campos fornecidos e somar a quantidade
+            const updatedQuantidade = quantidade !== null ? quantidade + existingProduct.quantidade : existingProduct.quantidade;
+            await runAsync(`
+                UPDATE produtos 
+                SET 
+                    nome = COALESCE(?, nome), 
+                    quantidade = ?, 
+                    dataEntrada = COALESCE(?, dataEntrada), 
+                    dataValidade = COALESCE(?, dataValidade), 
+                    preco = COALESCE(?, preco)
+                WHERE codigoProduto = ?
+            `, [nome, updatedQuantidade, dataEntrada, dataValidade, preco, codigoProduto]);
+
+            return 'Produto atualizado com sucesso.';
+        } else {
+            // Inserir um novo registro
+            await runAsync('INSERT INTO produtos (codigoProduto, nome, quantidade, dataEntrada, dataValidade, preco) VALUES (?, ?, ?, ?, ?, ?)', [codigoProduto, nome, quantidade, dataEntrada, dataValidade, preco]);
+            return 'Produto adicionado com sucesso.';
+        }
+    } catch (err) {
+        console.error('Erro ao adicionar ou atualizar produto:', err.message);
+        throw err;
+    }
 }
 
 async function deleteProductFromDb(codigoProduto, quantidade) {
@@ -145,11 +146,9 @@ async function deleteProductFromDb(codigoProduto, quantidade) {
         const row = await getAsync('SELECT quantidade FROM produtos WHERE codigoProduto = ?', [codigoProduto]);
 
         if (!row) {
-            console.error(`Produto não encontrado: codigoProduto=${codigoProduto}`);
             throw new Error('Produto não encontrado.');
         }
         if (row.quantidade < quantidade) {
-            console.error(`Quantidade insuficiente: codigoProduto=${codigoProduto}, quantidade=${quantidade}`);
             throw new Error('Quantidade insuficiente.');
         }
         if (row.quantidade === quantidade) {
@@ -165,8 +164,6 @@ async function deleteProductFromDb(codigoProduto, quantidade) {
         throw err;
     }
 }
-
-
 
 // Função para obter todos os produtos do banco de dados
 async function getAllProducts() {
@@ -199,11 +196,11 @@ async function adicionarUsuario(username, password) {
 
 // Função para fechar o banco de dados
 function closeDb() {
-    db.close((err) => {
+    connection.end((err) => {
         if (err) {
-            console.error('Erro ao fechar o banco de dados:', err.message);
+            console.error('Erro ao fechar a conexão com o banco de dados:', err.message);
         } else {
-            console.log('Banco de dados fechado com sucesso.');
+            console.log('Conexão com o banco de dados fechada com sucesso.');
         }
     });
 }
