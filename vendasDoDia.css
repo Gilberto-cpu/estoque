@@ -1,0 +1,227 @@
+/* Estilos básicos para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+}
+
+h3 {
+    color: #444;
+    margin: 20px 0 10px;
+    padding-left: 10px;
+}
+
+/* Estilo da lista de produtos */
+#product-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 980px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+/* Estilo de cada item de produto */
+#product-list li {
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+/* Estilo do botão de deletar */
+#product-list button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#product-list button img {
+    width: 40px;
+    height: auto;
+    filter: invert(35%) sepia(96%) saturate(6170%) hue-rotate(1deg) brightness(101%) contrast(102%);
+}
+
+/* Adicionar um efeito ao passar o mouse sobre o botão de deletar */
+#product-list button:hover img {
+    filter: invert(44%) sepia(91%) saturate(5413%) hue-rotate(1deg) brightness(92%) contrast(120%);
+}
+
+/* Estilo para o cabeçalho de cada data */
+h3 {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #product-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #product-list button {
+        margin-top: 10px;
+    }
+}
+/* Fundo do modal */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com mais transparência */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    border: #45a049;
+}
+
+/* Conteúdo do modal */
+.modalcontent {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border: none;
+    width: 400px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalOpen 0.3s ease-out; /* Animação suave ao abrir o modal */
+    border: 5px solid rgba(128, 128, 128, 0.432)
+}
+
+/* Animação de abertura do modal */
+
+
+/* Botão de fechar */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+}
+
+/* Texto da pergunta */
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Botões Sim e Não */
+#confirmBtn, #cancelBtn {
+    margin: 10px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Estilo do botão "Sim" */
+#confirmBtn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+#confirmBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Estilo do botão "Não" */
+#cancelBtn {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+}
+
+#cancelBtn:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+#okButton{
+    margin-left: -55px;
+    cursor: pointer;
+
+}
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    animation: modalOpen 0.3s ease-in-out; 
+}
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+@keyframes modalOpen {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
